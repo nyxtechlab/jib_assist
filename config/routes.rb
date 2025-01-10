@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bots
   post 'callback/line/:botname', to: 'callback#line'
   post 'callback/telegram/:botname', to: 'callback#telegram'
   resources :messages

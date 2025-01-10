@@ -1,0 +1,25 @@
+# ## Schema Information
+#
+# Table name: `bots`
+#
+# ### Columns
+#
+# Name                | Type               | Attributes
+# ------------------- | ------------------ | ---------------------------
+# **`id`**            | `bigint`           | `not null, primary key`
+# **`config_store`**  | `json`             |
+# **`name`**          | `text`             |
+# **`type`**          | `text`             |
+# **`created_at`**    | `datetime`         | `not null`
+# **`updated_at`**    | `datetime`         | `not null`
+#
+
+one:
+  name: MyText
+  type: MyText
+  config_store: 
+
+two:
+  name: MyText
+  type: MyText
+  config_store: 
