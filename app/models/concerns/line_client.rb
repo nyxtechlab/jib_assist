@@ -6,7 +6,7 @@ class LineClient
   end
 
   def callback_to_message_object(params)
-    botname = params['bot_name']
+    botname = params['botname']
 
     messages = []
 
