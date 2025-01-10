@@ -1,4 +1,4 @@
-require 'rest-client'
+require 'rest_client'
 
 class LineClient
   attr_accessor :client_token
