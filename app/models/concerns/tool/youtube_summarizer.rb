@@ -16,9 +16,9 @@ class Tool::YoutubeSummarizer < Tool::Base
   end
 
   def self.reply_message(message)
-    yturl = message.split("!yt ").last.split(" ").first
+    url = message.split("!yt ").last.split(" ").first
     
-    unless yturl =~ URI::regexp
+    unless url =~ URI::regexp
       return "Invalid URL"
     end
 
@@ -27,14 +27,14 @@ class Tool::YoutubeSummarizer < Tool::Base
     # STEP 1 - Download the subtitles
     puts "STEP 1 - Downloading the subtitles"
 
-    unique_id = Base64.encode64(yturl)
+    unique_id = Base64.strict_encode64(url)
 
     sub_format = "srt" # srt|ass|vtt|lrc
-    sub_prefix = "#{Rails.roots.join('storage','ytdl')}/rawsubs/" + unique_id + ".#{sub_format}"
+    sub_prefix = "#{Rails.root.join('storage','ytdl')}/rawsubs/" + unique_id + ".#{sub_format}"
     sub_filename = sub_prefix + ".#{language}.vtt"
 
     # Execute the youtube-dl command
-    dlcommand = "yt-dlp --write-auto-sub --convert-subs #{sub_format} -k --sub-langs #{language} -o #{sub_prefix} --skip-download #{url}"
+    dlcommand = "#{Rails.root}/yt-dlp --write-auto-sub --convert-subs #{sub_format} -k --sub-langs #{language} -o #{sub_prefix} --skip-download #{url}"
     puts dlcommand
 
     system(dlcommand)

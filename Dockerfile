@@ -42,8 +42,10 @@ FROM base
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips libpq-dev freetds-dev && \
+    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips libpq-dev freetds-dev python3 && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+RUN curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /rails/yt-dlp && chmod a+rx /rails/yt-dlp
 
 # Copy built artifacts: gems, application
 COPY --from=build /usr/local/bundle /usr/local/bundle
