@@ -7,6 +7,11 @@ class CallbackController < ApplicationController
 
     messages = line_client.callback_to_message_object(params)
 
+    messages.each do |message|
+      # DEMO ECHO BACK
+      line_client.reply_to_message(message.line_reply_token, [message.content])
+    end
+
     render json: { status: "ok" }
   end
 
