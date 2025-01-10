@@ -70,3 +70,5 @@ end
 gem "dotenv-rails", "~> 3.1"
 
 gem "annotate", "~> 3.2"
+
+gem "rest_client", "~> 8.0"
