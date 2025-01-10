@@ -3,7 +3,7 @@ class CallbackController < ApplicationController
 
   def line
     bot = Bot.find_by(name: params[:botname])
-    line_client = LineClient(bot.line_client_token)
+    line_client = LineClient.new(bot.line_client_token)
   end
 
   def telegram
