@@ -16,7 +16,7 @@ class BotsTest < ApplicationSystemTestCase
 
     fill_in "Config store", with: @bot.config_store
     fill_in "Name", with: @bot.name
-    fill_in "Type", with: @bot.type
+    fill_in "Platform", with: @bot.platform
     click_on "Create Bot"
 
     assert_text "Bot was successfully created"
@@ -29,7 +29,7 @@ class BotsTest < ApplicationSystemTestCase
 
     fill_in "Config store", with: @bot.config_store
     fill_in "Name", with: @bot.name
-    fill_in "Type", with: @bot.type
+    fill_in "Platform", with: @bot.platform
     click_on "Update Bot"
 
     assert_text "Bot was successfully updated"

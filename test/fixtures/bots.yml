@@ -9,17 +9,17 @@
 # **`id`**            | `bigint`           | `not null, primary key`
 # **`config_store`**  | `json`             |
 # **`name`**          | `text`             |
-# **`type`**          | `text`             |
+# **`platform`**      | `text`             |
 # **`created_at`**    | `datetime`         | `not null`
 # **`updated_at`**    | `datetime`         | `not null`
 #
 
 one:
   name: MyText
-  type: MyText
+  platform: MyText
   config_store: 
 
 two:
   name: MyText
-  type: MyText
+  platform: MyText
   config_store: 

@@ -65,6 +65,6 @@ class BotsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bot_params
-      params.require(:bot).permit(:name, :type, :config_store)
+      params.require(:bot).permit(:name, :platform, :config_store)
     end
 end

@@ -17,7 +17,7 @@ class BotsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create bot" do
     assert_difference("Bot.count") do
-      post bots_url, params: { bot: { config_store: @bot.config_store, name: @bot.name, type: @bot.type } }
+      post bots_url, params: { bot: { config_store: @bot.config_store, name: @bot.name, platform: @bot.platform } }
     end
 
     assert_redirected_to bot_url(Bot.last)
@@ -34,7 +34,7 @@ class BotsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update bot" do
-    patch bot_url(@bot), params: { bot: { config_store: @bot.config_store, name: @bot.name, type: @bot.type } }
+    patch bot_url(@bot), params: { bot: { config_store: @bot.config_store, name: @bot.name, platform: @bot.platform } }
     assert_redirected_to bot_url(@bot)
   end
 
