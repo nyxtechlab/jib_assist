@@ -34,7 +34,7 @@ class Tool::YoutubeSummarizer < Tool::Base
     sub_filename = sub_prefix + ".#{language}.vtt"
 
     # Execute the youtube-dl command
-    dlcommand = "#{Rails.root}/yt-dlp --write-auto-sub --convert-subs #{sub_format} -k --sub-langs #{language} -o #{sub_prefix} --skip-download #{url}"
+    dlcommand = "#{Rails.root}/yt-dlp --write-auto-sub --convert-subs #{sub_format} -k --sub-langs #{language} -o #{sub_prefix} --skip-download --cookies-from-browser chromium #{url}"
     puts dlcommand
 
     system(dlcommand)
